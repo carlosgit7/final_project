@@ -5,10 +5,10 @@
     <form class="flex flex-col space-y-4 p-3 w-1/2">
       <input type="text" placeholder="Email" class="pl-2 rounded-md">
       <input type="text" placeholder="Password" class="pl-2 rounded-md">
-      <button class="bg-green-500 rounded-md hover:bg-green-600">Login</button>
-      <button class="bg-blue-700 rounded-md hover:bg-blue-800">Sign Up</button>
-      <button class="bg-gray-400 rounded-md hover:bg-gray-500">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" class="m-auto object-cover h-8 w-auto" alt="Google_2015_logo">
+      <button class="w-4/5 m-auto bg-green-500 rounded-md hover:bg-green-600">Login</button>
+      <button class="w-4/5 m-auto bg-blue-600 rounded-md hover:bg-blue-800">Sign Up</button>
+      <button class="w-4/5 m-auto bg-gray-400 rounded-md hover:bg-gray-500">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" class="m-auto object-cover h-7 w-auto" alt="Google_2015_logo">
       </button>
 
     </form>
