@@ -1,3 +1,5 @@
 <template>
-    <h1 class="text-4xl font-semibold pt-5">404 Not Found</h1> 
+<div class="flex mt-10 rounded-lg overflow-hidden">
+     <img src="../assets/http-404-not-found.jpg" alt="not found" class="object-scale-down h-96">
+</div>
 </template>
