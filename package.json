@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "cheerupsocial_finalproject",
+=======
+  "name": "ncourageapp_finalproject",
+>>>>>>> 12f8db5390d147fbfc2e7b33dfebcdda77eb76d1
   "private": true,
   "version": "0.0.0",
   "scripts": {
