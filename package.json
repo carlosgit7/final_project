@@ -1,5 +1,5 @@
 {
-  "name": "basicvuerouter",
+  "name": "cheerupsocial_finalproject",
   "private": true,
   "version": "0.0.0",
   "scripts": {
@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "firebase": "^9.6.10",
     "vue": "^3.2.25",
     "vue-router": "^4.0.12"
   },

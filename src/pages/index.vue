@@ -1,16 +1,54 @@
+<script setup>
+    import { ref } from "vue";
+    import { useRouter } from "vue-router";
+    import userAuth from "../composables/userAuth";
+    import loginError from "../composables/loginError";
+    //import { useTimeout, promiseTimeout } from "@vueuse/core";
+    
+
+    const {isAuthenticated, login} = userAuth();
+
+    const username = ref("");
+    const password = ref("");
+
+    const router = useRouter();
+
+    const logginIn = () => {
+        login(username.value, password.value);
+        if (isAuthenticated.value) {
+            router.push("/timeline");
+      } else {
+            setError("Invalid username or password");
+            start();
+    }
+};
+
+const { error, setError } = loginError()
+
+
+//const { ready, start } = useTimeout(3000, { controls: true });
+
+</script>
+
 <template>
-    <h1 class="text-4xl pt-5 text-orange-500 font-normal italic mt-10">Try to be a rainbow in someone else's cloud -<span class="font-light italic"> Maya Angelou</span></h1>
+    <h1 class="text-4xl pt-5 text-orange-500 font-normal italic mt-10">"Try to be a rainbow in someone else's cloud" -<span class="font-light italic"> Maya Angelou</span></h1>
     <h3 class="text-orange-400"> Please login or create account</h3>
+  {{isAuthenticated}}
   <div class="flex w-1/2 mx-auto  mt-16 p-4 text-xl font-light bg-slate-300 rounded-lg shadow-2xl items-center justify-center overflow-hidden">
-    <form class="flex flex-col space-y-4 p-3 w-1/2">
-      <input type="text" placeholder="Email" class="pl-2 rounded-md">
-      <input type="text" placeholder="Password" class="pl-2 rounded-md">
-      <button class="w-4/5 m-auto bg-green-500 rounded-md hover:bg-green-600">Login</button>
+    <form @submit.prevent="logginIn" class="flex flex-col space-y-4 p-3 w-1/2">
+      <input type="text" placeholder="Email" class="pl-2 rounded-md" v-model="username" 
+      :class="!ready && error ? 'border-2 border-red-500 p-1 rounded-md' : 'p-1 rounded-md'">
+      <input type="password" placeholder="Password" class="pl-2 rounded-md" v-model="password"       
+      :class="!ready && error ? 'border-2 border-red-500 p-1 rounded-md' : 'p-1 rounded-md'">
+      <button type="submit" @submit.prevent="logginIn" class="w-4/5 m-auto bg-green-500 rounded-md hover:bg-green-600">Login</button>
       <button class="w-4/5 m-auto bg-blue-600 rounded-md hover:bg-blue-800">Sign Up</button>
       <button class="w-4/5 m-auto bg-gray-400 rounded-md hover:bg-gray-500">
           <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" class="m-auto object-cover h-7 w-auto" alt="Google_2015_logo">
       </button>
 
     </form>
+  </div>
+  <div v-if="!ready && error" class="absolute w-1/3 px-4 py-3 text-center text-red-800 bg-red-300 rounded-lg bottom-2 right-2 shadow-inner">
+      {{ error }}
   </div>
 </template>

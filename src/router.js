@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import userAuth from "./composables/userAuth";
 import Index from './pages/index.vue';
 import Timeline from './pages/timeline.vue';
 import Profile from './pages/profile.vue';
@@ -6,6 +7,7 @@ import Post from './pages/post.vue';
 import About from './pages/about.vue';
 import Logout from './pages/logout.vue';
 import NotFound from './pages/404.vue';
+
 
 const routes = [
     {
@@ -27,6 +29,7 @@ const routes = [
         path: "/profile",
         name: "Profile",
         component: Profile,
+        
     },
     {
         path: "/about",
