@@ -6,7 +6,7 @@
     import { useTimeout, promiseTimeout } from "@vueuse/core";
     
 
-    const {isAuthenticated, login} = userAuth();
+    const {isAuthenticated, login, signup, googleLogin} = userAuth();
 
     const username = ref("");
     const password = ref("");
@@ -15,13 +15,27 @@
 
     const logginIn = async () => {
         await login(username.value, password.value);
-        if (isAuthenticated.value) {
-            router.push("/timeline");
-      } else {
-            setError("Invalid username or password");
-            start();
-    }
+        goToHome();
 };
+
+  const signingUp = async () => {
+        await signup(username.value, password.value);
+        goToHome();
+ };
+
+ const google = async() => {
+      await googleLogin();
+      goToHome();
+    }
+
+  const goToHome = () => {
+    if (isAuthenticated.value) {
+        router.push("/timeline");
+    } else {
+        setError("Invalid username or password");
+        start();
+    }
+ };
 
 const { error, setError } = loginError()
 
@@ -41,8 +55,8 @@ const { ready, start } = useTimeout(4000, { controls: true });
       <input type="password" placeholder="Password" class="pl-2 rounded-md" v-model="password"       
       :class="!ready && error ? 'border-2 border-red-500 p-1 rounded-md' : 'p-1 rounded-md'">
       <button type="submit" @submit.prevent="logginIn" class="w-4/5 m-auto bg-green-500 rounded-md hover:bg-green-600">Login</button>
-      <button class="w-4/5 m-auto bg-blue-600 rounded-md hover:bg-blue-800">Sign Up</button>
-      <button class="w-4/5 m-auto bg-gray-400 rounded-md hover:bg-gray-500">
+      <button @click="signingUp" class="w-4/5 m-auto bg-blue-600 rounded-md hover:bg-blue-800">Sign Up</button>
+      <button @click="google" class="w-4/5 m-auto bg-gray-400 rounded-md hover:bg-gray-500">
           <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" class="m-auto object-cover h-7 w-auto" alt="Sign up with google">
       </button>
 
