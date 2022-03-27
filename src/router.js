@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import userAuth from "./composables/userAuth";
+
 import Index from './pages/index.vue';
 import Timeline from './pages/timeline.vue';
 import Profile from './pages/profile.vue';
@@ -8,6 +9,7 @@ import About from './pages/about.vue';
 import Logout from './pages/logout.vue';
 import NotFound from './pages/404.vue';
 
+const {isAuthenticated} = userAuth();
 
 const routes = [
     {
@@ -19,16 +21,34 @@ const routes = [
         path: "/timeline",
         name: "timeline",
         component: Timeline,
+        beforeEnter: (to, from, next) => {
+            if(!isAuthenticated.value){
+                next("/");
+            }
+            next();
+        }
     },
     {
         path: "/post",
         name: "Post",
         component: Post,
+        beforeEnter: (to, from, next) => {
+            if(!isAuthenticated.value){
+                next("/");
+            }
+            next();
+        }
     },
     {
         path: "/profile",
         name: "Profile",
         component: Profile,
+        beforeEnter: (to, from, next) => {
+            if(!isAuthenticated.value){
+                next("/");
+            }
+            next();
+        }
         
     },
     {
