@@ -3,7 +3,7 @@
     import { useRouter } from "vue-router";
     import userAuth from "../composables/userAuth";
     import loginError from "../composables/loginError";
-    //import { useTimeout, promiseTimeout } from "@vueuse/core";
+    import { useTimeout, promiseTimeout } from "@vueuse/core";
     
 
     const {isAuthenticated, login} = userAuth();
@@ -26,7 +26,7 @@
 const { error, setError } = loginError()
 
 
-//const { ready, start } = useTimeout(3000, { controls: true });
+const { ready, start } = useTimeout(4000, { controls: true });
 
 </script>
 
