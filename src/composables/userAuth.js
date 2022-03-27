@@ -14,13 +14,14 @@ const isAuthenticated = ref(false);
 const user = ref("");
 
 const userAuth = () => {
+
     const googleLogin =async () => {
        const provider = new GoogleAuthProvider();
        const credentials = await signInWithPopup(firebaseAuth, provider);
        if(credentials.user){
-        isAuthenticated.value = true;
-        user.value = credentials.user.displayName;
-    }
+            isAuthenticated.value = true;
+            user.value = credentials.user.displayName;
+        }
     }
     const login = async (username, password) => {
         const credentials = await signInWithEmailAndPassword(firebaseAuth, username, password);
