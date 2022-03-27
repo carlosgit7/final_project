@@ -13,8 +13,8 @@
 
     const router = useRouter();
 
-    const logginIn = () => {
-        login(username.value, password.value);
+    const logginIn = async () => {
+        await login(username.value, password.value);
         if (isAuthenticated.value) {
             router.push("/timeline");
       } else {
@@ -36,7 +36,7 @@ const { ready, start } = useTimeout(4000, { controls: true });
   {{isAuthenticated}}
   <div class="flex w-1/2 mx-auto  mt-16 p-4 text-xl font-light bg-slate-300 rounded-lg shadow-2xl items-center justify-center overflow-hidden">
     <form @submit.prevent="logginIn" class="flex flex-col space-y-4 p-3 w-1/2">
-      <input type="text" placeholder="Email or username" class="pl-2 rounded-md" v-model="username" 
+      <input type="text" placeholder="Email" class="pl-2 rounded-md" v-model="username" 
       :class="!ready && error ? 'border-2 border-red-500 p-1 rounded-md' : 'p-1 rounded-md'">
       <input type="password" placeholder="Password" class="pl-2 rounded-md" v-model="password"       
       :class="!ready && error ? 'border-2 border-red-500 p-1 rounded-md' : 'p-1 rounded-md'">
