@@ -47,7 +47,7 @@ const { ready, start } = useTimeout(4000, { controls: true });
 <template>
     <h1 class="text-4xl pt-5 text-orange-500 font-normal italic mt-10">"Try to be a rainbow in someone else's cloud" -<span class="font-light italic"> Maya Angelou</span></h1>
     <h3 class="text-orange-400"> Please login or create account</h3>
-  {{isAuthenticated}}
+  <!-- {{isAuthenticated}} -->
   <div class="flex w-1/2 mx-auto  mt-16 p-4 text-xl font-light bg-slate-300 rounded-lg shadow-2xl items-center justify-center overflow-hidden">
     <form @submit.prevent="logginIn" class="flex flex-col space-y-4 p-3 w-1/2">
       <input type="text" placeholder="Email" class="pl-2 rounded-md" v-model="username" 
