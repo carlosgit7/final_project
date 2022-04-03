@@ -14,7 +14,6 @@ const isAuthenticated = ref(false);
 const user = ref("");
 
 const userAuth = () => {
-
     const googleLogin =async () => {
        const provider = new GoogleAuthProvider();
        const credentials = await signInWithPopup(firebaseAuth, provider);

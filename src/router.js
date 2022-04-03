@@ -4,7 +4,7 @@ import userAuth from "./composables/userAuth";
 import Index from './pages/index.vue';
 import Timeline from './pages/timeline.vue';
 import Profile from './pages/profile.vue';
-import Post from './pages/post.vue';
+import More from './pages/more.vue';
 import About from './pages/about.vue';
 import Logout from './pages/logout.vue';
 import NotFound from './pages/404.vue';
@@ -29,17 +29,6 @@ const routes = [
         }
     },
     {
-        path: "/post",
-        name: "Post",
-        component: Post,
-        beforeEnter: (to, from, next) => {
-            if(!isAuthenticated.value){
-                next("/");
-            }
-            next();
-        }
-    },
-    {
         path: "/profile",
         name: "Profile",
         component: Profile,
@@ -48,8 +37,18 @@ const routes = [
                 next("/");
             }
             next();
+        }        
+    },
+    {
+        path: "/more",
+        name: "More",
+        component: More,
+        beforeEnter: (to, from, next) => {
+            if(!isAuthenticated.value){
+                next("/");
+            }
+            next();
         }
-        
     },
     {
         path: "/about",
