@@ -14,7 +14,7 @@ const loggingOut = () => {
 </script>
 
 <template>
-<div class="flex bg-cyan-800 px-10 py-6 h-56 mt-48 justify-between">
+<div class="flex bg-blue-800 px-10 py-6 h-56 mt-48 justify-between">
     <div class="">
         <router-link to="/"><h1 class="tracking-tighter text-4xl text-orange-600 font-medium hover:cursor-pointer">
             CheerUpSocial 

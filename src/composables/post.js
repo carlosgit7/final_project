@@ -14,6 +14,8 @@ const { user } = userAuth()
 
 const posts = ref([])
 
+let likes = 0
+
 const usePosts= () => {
   const postsCollection = collection(db, 'userPosts')
 
@@ -34,8 +36,13 @@ const usePosts= () => {
     })
   }
 
+const addLike = () => {
+  likes++
+  console.log(likes)
+  return likes
+}
 
-  return { posts, unsubscribe, sendPost }
+  return { posts, unsubscribe, sendPost, addLike }
 }
 
 export default usePosts

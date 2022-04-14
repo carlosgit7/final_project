@@ -4,7 +4,7 @@
 </script>
 
 <template>
-<div class="min-h-screen bg-gray-200">
+<div class="min-h-screen bg-yellow-300">
     <Nav />
     <div class="container mx-auto grid justify-items-center">
      <router-view />

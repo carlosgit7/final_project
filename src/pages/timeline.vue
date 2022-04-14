@@ -3,7 +3,7 @@ import { onUnmounted, ref } from "vue";
 import usePosts from "../composables/post";
 import userAuth from "../composables/userAuth";
 
-const {posts, unsubscribe, sendPost} = usePosts();
+const {posts, unsubscribe, sendPost, addLike} = usePosts();
 const { user } = userAuth();
 
 const newPost = ref('')
@@ -33,7 +33,12 @@ onUnmounted(() => {
         <div class="flex flex-col w-1/2 pb-2 text-base m-auto">
           <div class="justify-start text-black font-bold px-1">{{post.userName}} said:</div>
           <div class="border border-gray-600 rounded-lg p-1 px-2">{{post.content}} </div>  
-          <div class="flex space-x-1 justify-end pr-3" > <img src="../assets/icons/icons8-orange-heart-20.png" alt="" class="hover:cursor-pointer"> <span>{{post.likes}}</span></div>
+          <div class="flex space-x-1 justify-end pr-3" > 
+            <button @click="addLike">
+              <img src="../assets/icons/icons8-orange-heart-20.png" alt="" class="hover:cursor-pointer">
+            </button>
+            <span>{{}}</span>
+            <span>{{post.likes}}</span></div>
         </div>
       </li>
     </ul>
