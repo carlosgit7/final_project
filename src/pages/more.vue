@@ -6,7 +6,7 @@
       Get a random advice 🡢</router-link>
       <router-link to="/breakingBadQuotes" class="text-3xl text-orange-500 hover:text-orange-300 mt-8 flex">
       <img src="../assets/breaking-bad-logo.png" alt="" class="h-12 w-24 rounded-full mr-2">
-      Get tough love from <span class="font-bold">Br</span>eaking<span class="font-bold">Ba</span>d quotes 🡢</router-link>
+      Get tough love from<span class="font-bold ml-1">Br</span>eaking<span class="font-bold">Ba</span>d quotes 🡢</router-link>
     </div>
 </div>
 </template>
