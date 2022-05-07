@@ -3,7 +3,7 @@ import userAuth from "./composables/userAuth";
 
 import Index from './pages/index.vue';
 import Timeline from './pages/timeline.vue';
-import Profile from './pages/profile.vue';
+//import Profile from './pages/profile.vue';
 import More from './pages/more.vue';
 import About from './pages/about.vue';
 import Logout from './pages/logout.vue';
@@ -30,17 +30,17 @@ const routes = [
             next();
         }
     },
-    {
-        path: "/profile",
-        name: "Profile",
-        component: Profile,
-        beforeEnter: (to, from, next) => {
-            if(!isAuthenticated.value){
-                next("/");
-            }
-            next();
-        }        
-    },
+    // {
+    //     path: "/profile",
+    //     name: "Profile",
+    //     component: Profile,
+    //     beforeEnter: (to, from, next) => {
+    //         if(!isAuthenticated.value){
+    //             next("/");
+    //         }
+    //         next();
+    //     }        
+    // },
     {
         path: "/more",
         name: "More",

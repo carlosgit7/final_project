@@ -1,9 +1,14 @@
 <script setup>
+    import {ref} from 'vue';
     import { useRouter } from "vue-router";
     import { useForm, useField } from 'vee-validate';
     import * as yup from 'yup';
     import userAuth from "../composables/userAuth";
     import loginError from "../composables/loginError";
+    import { famousQuotes } from "../composables/famousQuotesAPI";
+
+    const {quotes, multipleQuotes} = famousQuotes();
+    const multiple = ref("")
 
     const schema = yup.object({
       username: yup.string().required().email().label("Email"),
@@ -49,11 +54,16 @@
 
     const { error, setError } = loginError()
 
+
 </script>
 
 <template>
-    <h1 class="text-4xl pt-5 text-orange-500 font-normal italic mt-10">"Try to be a rainbow in someone else's cloud" -<span class="font-light italic"> Maya Angelou</span></h1>
-    <h3 class="text-orange-400"> Please login or Sign up</h3>
+  <div class="flex flex-col w-3/4 text-4xl tracking-tight text-orange-500 mt-10">
+    <div v-for="(q, a, index) in quotes" :key="index" class="">
+      <p class="font-light italic">{{q.q}} - <span class="text-2xl font-normal">{{q.a}}</span></p>
+    </div>
+  </div>
+  <h3 class="text-blue-400"> Please login or Sign up</h3>
   <!-- {{isAuthenticated}} -->
   <div class="flex w-1/2 mx-auto mt-16 p-4 text-xl font-light bg-slate-200 rounded-lg shadow-md items-center justify-center overflow-hidden">
     <form @submit.prevent="logginIn" class="flex flex-col space-y-3 p-3 w-1/2">
@@ -70,7 +80,9 @@
       <button @click="google" class="w-4/5 m-auto bg-gray-400 rounded-md hover:bg-gray-500">
           <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" class="m-auto object-cover h-7 w-auto" alt="Sign up with google">
       </button>
-
     </form>
+  </div>
+  <div class="flex min-w-full justify-end mt-48">
+    Inspirational quotes provided by <a href="https://zenquotes.io/" target="_blank" class="text-blue-400">ZenQuotes API</a>
   </div>
 </template>
