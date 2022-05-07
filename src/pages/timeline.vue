@@ -33,12 +33,12 @@ onUnmounted(() => {
         <div class="flex flex-col w-1/2 pb-1 text-base m-auto">
           <div class="justify-start text-black font-bold px-1">{{post.userName}} said:</div>
           <div class="border border-gray-600 rounded-lg p-1 px-2">{{post.content}} </div>  
-          <div class="flex space-x-1 justify-end pr-3" > 
-            <button @click="addLike">
-              <img src="../assets/icons/icons8-orange-heart-20.png" alt="" class="hover:cursor-pointer">
+          <div class="flex space-x-1 justify-end pr-3 opacity-60 hover:opacity-100" > 
+            <button class="">
+              <img src="../assets/icons/icons8-orange-heart-20.png" alt="" class="hover:skew-y-6 hover:cursor-pointer">
             </button>
             <span>{{}}</span>
-            <span>{{post.likes}}</span></div>
+            <span>{{}}</span></div>
         </div>
       </li>
     </ul>

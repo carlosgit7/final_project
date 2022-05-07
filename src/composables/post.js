@@ -36,13 +36,7 @@ const usePosts= () => {
     })
   }
 
-const addLike = () => {
-  likes++
-  console.log(likes)
-  return likes
-}
-
-  return { posts, unsubscribe, sendPost, addLike }
+  return { posts, unsubscribe, sendPost }
 }
 
 export default usePosts
