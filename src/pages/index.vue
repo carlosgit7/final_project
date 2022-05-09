@@ -64,7 +64,7 @@
     </div>
   </div> -->
   <div class="mt-10 flex flex-col justify-content-center font-light tracking-tight">
-    <h1 class="text-5xl text-orange-500 italic">We rise by lifting others. <span class="text-2xl">- Robert Ingersoll</span></h1>
+    <h1 class="text-3xl text-orange-500 italic">We rise by lifting others. <span class="text-base">- Robert Ingersoll</span></h1>
     <h3 class="text-blue-400 m-auto mt-3"> Please login or sign up</h3>
   </div>
   <!-- {{isAuthenticated}} -->

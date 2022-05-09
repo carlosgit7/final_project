@@ -30,12 +30,12 @@ onUnmounted(() => {
     </div>
   </div> -->
   <div class="mt-10 flex flex-col justify-content-center font-light tracking-tight">    
-    <h1 class="text-4xl text-orange-500 italic">The more people you inspire, the more people will inspire you. <span class="text-xl">- Simon Sinek</span></h1>
+    <h1 class="text-3xl text-orange-500 italic">The more people you inspire, the more people will inspire you. <span class="text-base">- Simon Sinek</span></h1>
 </div>
   <div class="flex flex-col w-2/3 mx-auto mt-10 p-4 text-4xl font-light bg-blue-700 rounded-t-lg shadow-md items-center justify-center">
     <h1 class="mb-5 text-orange-500"> Welcome {{ user }}</h1>
     <div class="flex w-full p-1 text-base mb-5 justify-center">
-      <input type="text" placeholder="Say something..." class="pl-2 py-1 rounded-lg bg-slate-300 border border-gray-400 w-2/3 focus:outline-none" v-model="newPost" @change="send">
+      <input type="text" placeholder="Inspire the world..." class="pl-2 py-1 rounded-lg bg-slate-300 border border-gray-400 w-2/3 focus:outline-none" v-model="newPost" @change="send">
     </div>
   </div>
   <div class="flex w-2/3">

@@ -1,4 +1,7 @@
 <template>
+  <div class="mt-10 flex flex-col justify-content-center font-light tracking-tight">    
+    <h1 class="text-3xl text-orange-500 italic">Live life, be happy, and have fun.</h1>
+  </div>
   <div class="flex w-2/3 mx-auto mt-10 p-10 text-xl font-light bg-blue-800 rounded-lg shadow-md items-center justify-center overflow-hidden">
     <div class="flex flex-col w-full">
       <router-link to="/advice" class="text-3xl text-orange-500 hover:text-orange-300 flex">
