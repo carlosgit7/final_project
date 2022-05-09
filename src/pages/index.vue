@@ -5,10 +5,9 @@
     import * as yup from 'yup';
     import userAuth from "../composables/userAuth";
     import loginError from "../composables/loginError";
-    //import { famousQuotes } from "../composables/famousQuotesAPI";
+    import { famousQuotes } from "../composables/famousQuotesAPI";
 
-    //const {quotes, multipleQuotes} = famousQuotes();
-    //const multiple = ref("")
+    const {quotes} = famousQuotes();
 
     const schema = yup.object({
       username: yup.string().required().email().label("Email"),
@@ -58,13 +57,13 @@
 </script>
 
 <template>
-  <!-- <div class="flex justify-center w-3/4 text-4xl tracking-tight text-orange-500 mt-10">
-    <div v-for="(q, a, index) in quotes" :key="index" class="">
-      <p class="font-light italic">{{q.q}} - <span class="text-2xl font-normal">{{q.a}}</span></p>
+  <div class="flex justify-center text-center w-3/4 text-4xl tracking-tight text-orange-500 mt-10">
+    <div v-for="(content, author, index) in quotes" :key="index" class="">
+      <p class="font-light italic">{{content.content}} - <span class="text-2xl font-light">{{content.author}}</span></p>
     </div>
-  </div> -->
-  <div class="mt-10 flex flex-col justify-content-center font-light tracking-tight">
-    <h1 class="text-3xl text-orange-500 italic">We rise by lifting others. <span class="text-base">- Robert Ingersoll</span></h1>
+  </div>
+  <div class="flex flex-col text-center font-light tracking-tight">
+    <!-- <h1 class="text-3xl text-orange-500 italic">We rise by lifting others. <span class="text-base">- Robert Ingersoll</span></h1> -->
     <h3 class="text-blue-400 m-auto mt-3"> Please login or sign up</h3>
   </div>
   <!-- {{isAuthenticated}} -->

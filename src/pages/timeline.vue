@@ -2,9 +2,9 @@
 import { onUnmounted, ref } from "vue";
 import usePosts from "../composables/post";
 import userAuth from "../composables/userAuth";
-//import { famousQuotes } from "../composables/famousQuotesAPI";
+import { famousQuotes } from "../composables/famousQuotesAPI";
 
-//const {quotes, multipleQuotes} = famousQuotes();
+const {quotes, multipleQuotes} = famousQuotes();
 //const multiple = ref("")
 
 const {posts, unsubscribe, sendPost} = usePosts();
@@ -24,14 +24,14 @@ onUnmounted(() => {
 </script>
 
 <template>
-   <!-- <div class="flex flex-col w-3/4 text-3xl tracking-tight text-orange-500 mt-10">
-    <div v-for="(q, a, index) in quotes" :key="index" class="">
-      <p class="font-light italic">{{q.q}} - <span class="text-xl font-normal">{{q.a}}</span></p>
+  <div class="flex justify-center text-center w-3/4 text-4xl tracking-tight text-orange-500 mt-10">
+    <div v-for="(content, author, index) in quotes" :key="index" class="">
+      <p class="font-light italic">{{content.content}} - <span class="text-2xl font-light">{{content.author}}</span></p>
     </div>
-  </div> -->
-  <div class="mt-10 flex flex-col justify-content-center font-light tracking-tight">    
+  </div>
+  <!-- <div class="mt-10 flex flex-col justify-content-center font-light tracking-tight">    
     <h1 class="text-3xl text-orange-500 italic">The more people you inspire, the more people will inspire you. <span class="text-base">- Simon Sinek</span></h1>
-</div>
+</div> -->
   <div class="flex flex-col w-2/3 mx-auto mt-10 p-4 text-4xl font-light bg-blue-700 rounded-t-lg shadow-md items-center justify-center">
     <h1 class="mb-5 text-orange-500"> Welcome {{ user }}</h1>
     <div class="flex w-full p-1 text-base mb-5 justify-center">
