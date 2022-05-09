@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col w-2/3 mx-auto mt-16 p-10 text-xl font-light bg-blue-700 rounded-lg shadow-md items-center justify-center overflow-hidden text-center mb-48">
+  <div class="flex flex-col w-2/3 mx-auto mt-16 p-10 text-xl font-light bg-blue-700 rounded-lg shadow-md items-center justify-center overflow-hidden text-center">
     <h1 class="text-5xl text-orange-500"><span class="font-normal"> CheerUpSocial</span> is all about lifting each other up.</h1>
     <h3 class="text-white mt-10">At CheerUpSocial we believe that your words of encouragement can be the spark that pushes others forward.</h3>
     <h3 class="text-white mt-5">We believe that a word of encouragement during a failure is worth more than an hour of praise after success.</h3>

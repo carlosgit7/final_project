@@ -5,10 +5,10 @@
     import * as yup from 'yup';
     import userAuth from "../composables/userAuth";
     import loginError from "../composables/loginError";
-    import { famousQuotes } from "../composables/famousQuotesAPI";
+    //import { famousQuotes } from "../composables/famousQuotesAPI";
 
-    const {quotes, multipleQuotes} = famousQuotes();
-    const multiple = ref("")
+    //const {quotes, multipleQuotes} = famousQuotes();
+    //const multiple = ref("")
 
     const schema = yup.object({
       username: yup.string().required().email().label("Email"),
@@ -58,12 +58,15 @@
 </script>
 
 <template>
-  <div class="flex flex-col w-3/4 text-4xl tracking-tight text-orange-500 mt-10">
+  <!-- <div class="flex justify-center w-3/4 text-4xl tracking-tight text-orange-500 mt-10">
     <div v-for="(q, a, index) in quotes" :key="index" class="">
       <p class="font-light italic">{{q.q}} - <span class="text-2xl font-normal">{{q.a}}</span></p>
     </div>
+  </div> -->
+  <div class="mt-10 flex flex-col justify-content-center font-light tracking-tight">
+    <h1 class="text-5xl text-orange-500 italic">We rise by lifting others. <span class="text-2xl">- Robert Ingersoll</span></h1>
+    <h3 class="text-blue-400 m-auto mt-3"> Please login or sign up</h3>
   </div>
-  <h3 class="text-blue-400"> Please login or Sign up</h3>
   <!-- {{isAuthenticated}} -->
   <div class="flex w-1/2 mx-auto mt-16 p-4 text-xl font-light bg-slate-200 rounded-lg shadow-md items-center justify-center overflow-hidden">
     <form @submit.prevent="logginIn" class="flex flex-col space-y-3 p-3 w-1/2">
@@ -81,8 +84,5 @@
           <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" class="m-auto object-cover h-7 w-auto" alt="Sign up with google">
       </button>
     </form>
-  </div>
-  <div class="flex min-w-full justify-end mt-48">
-    Inspirational quotes provided by <a href="https://zenquotes.io/" target="_blank" class="text-blue-400">ZenQuotes API</a>
   </div>
 </template>
